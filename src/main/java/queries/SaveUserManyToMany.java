@@ -2,10 +2,18 @@ package queries;
 
 import entity.User;
 import entity.Vehicle;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
 public class SaveUserManyToMany {
     public static void main(String[] args) {
@@ -32,6 +40,19 @@ public class SaveUserManyToMany {
 //            session.save(user);
 //            session.save(vehicle);
 //            session.save(vehicle1);
+
+//         Criteria criteria = session.createCriteria(Vehicle.class);
+
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Vehicle> cr = cb.createQuery(Vehicle.class);
+        Root<Vehicle> root = cr.from(Vehicle.class);
+        cr.select(root);
+
+        Query<Vehicle> query = session.createQuery(cr);
+        List<Vehicle> results = query.getResultList();
+
+        System.out.println(results.get(0).getVehicleName());
+
             session.persist(user);
             t.commit();
             System.out.println("successfully saved");
