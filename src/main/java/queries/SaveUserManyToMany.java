@@ -29,10 +29,10 @@ public class SaveUserManyToMany {
             vehicle.getUserList().add(user);
             vehicle1.getUserList().add(user);
 
-            session.save(user);
-            session.save(vehicle);
-            session.save(vehicle1);
-//            session.persist(user);
+//            session.save(user);
+//            session.save(vehicle);
+//            session.save(vehicle1);
+            session.persist(user);
             t.commit();
             System.out.println("successfully saved");
             session.close();

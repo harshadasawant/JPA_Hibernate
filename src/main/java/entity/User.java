@@ -56,8 +56,8 @@ public class User {
 //    }
 
 
-//    @ManyToMany(cascade = CascadeType.PERSIST)
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
+//    @ManyToMany
     private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
 
     public List<Vehicle> getVehicleList() {
