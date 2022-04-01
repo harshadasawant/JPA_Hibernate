@@ -1,6 +1,6 @@
 package queries;
 
-import entity.User1;
+import entity.User;
 import entity.Vehicle;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -21,7 +21,7 @@ public class SaveUserManyToMany {
 
             Session session = factory.getCurrentSession();
             Transaction t = session.beginTransaction();
-            User1 user = new User1();
+            User user = new User();
             user.setName("Harshada");
 
             Vehicle vehicle = new Vehicle();

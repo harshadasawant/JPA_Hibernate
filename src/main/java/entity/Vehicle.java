@@ -28,13 +28,13 @@ public class Vehicle {
 //    }
 
     @ManyToMany(mappedBy = "vehicleList")
-    private List<User1> userList= new ArrayList<User1>();
+    private List<User> userList= new ArrayList<User>();
 
-    public List<User1> getUserList() {
+    public List<User> getUserList() {
         return userList;
     }
 
-    public void setUserList(List<User1> userList) {
+    public void setUserList(List<User> userList) {
         this.userList = userList;
     }
 
