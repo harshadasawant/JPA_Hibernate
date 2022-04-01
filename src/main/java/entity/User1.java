@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+@Table(name="User")
+public class User1 {
     @Id
     @GeneratedValue
     private int id;
