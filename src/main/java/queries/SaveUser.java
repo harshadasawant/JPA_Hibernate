@@ -21,8 +21,8 @@ public class SaveUser {
         Vehicle vehicle1 = new Vehicle();
         vehicle1.setVehicleName("skoda");
         user.getVehicleList().add(vehicle);
-//        vehicle.setUser(user);
-//        vehicle1.setUser(user);
+        vehicle.setUser(user);
+        vehicle1.setUser(user);
         user.getVehicleList().add(vehicle1);
 //        user.setVehicle(vehicle);
         session.save(user);

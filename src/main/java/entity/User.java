@@ -39,11 +39,12 @@ public class User {
         this.name = name;
     }
 
-//    @OneToMany(mappedBy = "user")
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    @JoinTable(name="User_Vehicle", joinColumns = @JoinColumn(name="USER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+
+//    @OneToMany
+//    @JoinColumn(name = "user_id")
+//    @JoinTable(name="User_Vehicle", joinColumns = @JoinColumn(name="USER_ID"),
+//            inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+    @OneToMany(mappedBy = "user")
     private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
 
     public List<Vehicle> getVehicleList() {
