@@ -26,6 +26,7 @@ public class Vehicle {
 //    public void setUser(User user) {
 //        this.user = user;
 //    }
+
 //    @ManyToMany(mappedBy = "vehicleList")
 //    private List<User> userList= new ArrayList<User>();
 //

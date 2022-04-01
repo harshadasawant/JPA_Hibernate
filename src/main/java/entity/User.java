@@ -11,17 +11,17 @@ public class User {
     private int id;
     private String name;
 
-    @OneToOne
-    @JoinColumn(name="VEHICLE_ID")
-    private Vehicle vehicle;
+//    @OneToOne
+//    @JoinColumn(name="VEHICLE_ID")
+//    private Vehicle vehicle;
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+//    public Vehicle getVehicle() {
+//        return vehicle;
+//    }
+//
+//    public void setVehicle(Vehicle vehicle) {
+//        this.vehicle = vehicle;
+//    }
 
     public int getId() {
         return id;
@@ -40,19 +40,19 @@ public class User {
     }
 
 //    @OneToMany(mappedBy = "user")
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    @JoinTable(name="User_Vehicle", joinColumns = @JoinColumn(name="USER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
+    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
 
-//    @JoinColumn(name = "user_id")
-//    @JoinTable(name="User_Vehicle", joinColumns = @JoinColumn(name="USER_ID"),
-//            inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
-//    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
-//
-//    public List<Vehicle> getVehicleList() {
-//        return vehicleList;
-//    }
-//
-//    public void setVehicleList(List<Vehicle> vehicleList) {
-//        this.vehicleList = vehicleList;
-//    }
+    public List<Vehicle> getVehicleList() {
+        return vehicleList;
+    }
+
+    public void setVehicleList(List<Vehicle> vehicleList) {
+        this.vehicleList = vehicleList;
+    }
 
 
 //    @ManyToMany
