@@ -15,28 +15,28 @@ public class Vehicle {
 //    @OneToOne(mappedBy = "user")
 //    private User user;
 
-    @ManyToOne
-    @JoinColumn(name="USER_ID")
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-//    @ManyToMany(mappedBy = "vehicleList")
-//    private List<User> userList= new ArrayList<User>();
+//    @ManyToOne
+//    @JoinColumn(name="USER_ID")
+//    private User user;
 //
-//    public List<User> getUserList() {
-//        return userList;
+//    public User getUser() {
+//        return user;
 //    }
 //
-//    public void setUserList(List<User> userList) {
-//        this.userList = userList;
+//    public void setUser(User user) {
+//        this.user = user;
 //    }
+
+    @ManyToMany(mappedBy = "vehicleList")
+    private List<User> userList= new ArrayList<User>();
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 
     public int getVehicleId() {
         return vehicleId;

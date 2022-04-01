@@ -44,19 +44,7 @@ public class User {
 //    @JoinColumn(name = "user_id")
 //    @JoinTable(name="User_Vehicle", joinColumns = @JoinColumn(name="USER_ID"),
 //            inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
-    @OneToMany(mappedBy = "user")
-    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
-
-    public List<Vehicle> getVehicleList() {
-        return vehicleList;
-    }
-
-    public void setVehicleList(List<Vehicle> vehicleList) {
-        this.vehicleList = vehicleList;
-    }
-
-
-//    @ManyToMany
+//    @OneToMany(mappedBy = "user")
 //    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
 //
 //    public List<Vehicle> getVehicleList() {
@@ -66,5 +54,18 @@ public class User {
 //    public void setVehicleList(List<Vehicle> vehicleList) {
 //        this.vehicleList = vehicleList;
 //    }
+
+
+//    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany
+    private List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+
+    public List<Vehicle> getVehicleList() {
+        return vehicleList;
+    }
+
+    public void setVehicleList(List<Vehicle> vehicleList) {
+        this.vehicleList = vehicleList;
+    }
 
 }
